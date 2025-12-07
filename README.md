@@ -5,7 +5,7 @@ Implements a DFA consisting entirely of spiking LIF neurons (except bias nodes) 
 ## Setup
 
 ```sh
-uv init
-uv add nengo nengo_spa nengo_gui numpy scipy jupyterlab matplotlib
 uv run nengo demo.py
 ```
+
+This is not configured as a Python package right now. I am mostly just messing around for the time being.
