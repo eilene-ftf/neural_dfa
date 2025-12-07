@@ -1,0 +1,15 @@
+[project]
+name = "neural-dfa"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "jupyterlab>=4.5.0",
+    "matplotlib>=3.10.7",
+    "nengo>=4.1.0",
+    "nengo-gui>=0.6.0",
+    "nengo-spa>=2.0.0",
+    "numpy>=2.3.5",
+    "scipy>=1.16.3",
+]
