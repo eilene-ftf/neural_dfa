@@ -160,7 +160,7 @@ class DFA(spa.Network):
 
             # There's also competitive activation on the selector input
             self.select_in = nengo.Node(size_in=len(table))
-            nengo.Connection(self.select_in, self.selector.input, transform=(1/(len(table)-1)) * (1-np.eye(2)))
+            nengo.Connection(self.select_in, self.selector.input, transform=(1/(len(table)-1)) * (1-np.eye(len(table))))
             nengo.Connection(self.select_in, self.selector.input, transform=-1)
 
             # Set up the state variables
