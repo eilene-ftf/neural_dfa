@@ -128,10 +128,10 @@ class DFA(spa.Network):
 
             # Set up the action selection
             # The extreme parameter values to get action activations to be as close to binary as possible
-            self.selector = spa.networks.selection.WTA(n_neurons=self.neur, 
-                                                       n_ensembles=len(table), 
-                                                       threshold=0
-                                                       )
+            self.selector = spa.networks.selection.Thresholding(n_neurons=self.neur, 
+                                                                n_ensembles=len(table), 
+                                                                threshold=0
+                                                                )
             self.transitions = nengo.networks.EnsembleArray(self.neur, 
                                                             len(table), 
                                                             intercepts=nengo.dists.Uniform(thresh*2, 1.0), 
@@ -160,7 +160,7 @@ class DFA(spa.Network):
 
             # There's also competitive activation on the selector input
             self.select_in = nengo.Node(size_in=len(table))
-            nengo.Connection(self.select_in, self.selector.input, transform=(1/(len(table)-1)) * (1-np.eye(len(table))))
+            nengo.Connection(self.select_in, self.selector.input, transform=(10/(len(table)-1)) * (1-np.eye(len(table))))
             nengo.Connection(self.select_in, self.selector.input, transform=-1)
 
             # Set up the state variables

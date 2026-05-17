@@ -1,6 +1,7 @@
 import nengo
 import nengo_spa as spa
 import numpy as np
+import importlib
 
 from neural_dfa import DFA, InputVar, StateVar
 
